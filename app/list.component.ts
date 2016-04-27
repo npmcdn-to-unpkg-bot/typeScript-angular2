@@ -23,7 +23,11 @@ export class ListComponent implements OnInit {
     constructor(private _indexService: IndexService, private dragulaService: DragulaService) {
         dragulaService.dropModel.subscribe((value) => {
             this.copyData('oldData', 'data');
-            if (this.autoSort) { this.reSort(); }
+            if (this.autoSort) {                
+                var elem = document.getElementById('submit-form-btn');
+                var event = new Event('click');
+                elem.dispatchEvent(event);
+            }
         });
     }
     

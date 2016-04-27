@@ -39,7 +39,9 @@ System.register(['angular2/core', './services/index.service', './vendor/ng2-drag
                     dragulaService.dropModel.subscribe(function (value) {
                         _this.copyData('oldData', 'data');
                         if (_this.autoSort) {
-                            _this.reSort();
+                            var elem = document.getElementById('submit-form-btn');
+                            var event = new Event('click');
+                            elem.dispatchEvent(event);
                         }
                     });
                 }
