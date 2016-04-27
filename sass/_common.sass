@@ -1,0 +1,121 @@
+body
+    overflow-y: scroll
+ 
+//bootstrap
+.form-group
+    border-radius: 3px
+    padding: 10px
+
+.form-control
+    height: 34px
+
+.btn
+    &:active:focus, &:focus
+        outline: 0
+
+//page
++headings()
+    font-weight: 300
+
+p, label
+    font-weight: 300
+
+.main
+    margin-top: 50px
+
+.reset-list, li
+    list-style-type: none !important
+    margin: 0
+    padding: 0
+
+.loader
+    +ver-align-abs(10)
+    &:before
+        content: ""
+        display: block
+        +spinner(60px, 3px)
+        
+.left-column, .right-column
+    padding: 0 10px
+    h4
+        margin-bottom: 30px
+
+.list
+    position: relative
+    min-height: 200px
+    +clearfix
+    .spinner
+        display: inline-block
+        position: relative
+        +size(25px)
+        line-height: 25px
+        text-align: center
+        font-size: 14px
+        float: right
+        &:before
+            content: ""
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 10
+            +spinner(25px, 2px)
+    .my-list-inner-wrapper
+        label
+            margin-bottom: 40px
+            cursor: pointer
+            +no-select
+        .form-group
+            cursor: grab
+            &:nth-child(odd)
+                background-color: $state-success-bg
+            &:nth-child(even)
+                background-color: $state-info-bg
+            .form-control
+                &.ng-invalid
+                    border-color: $state-danger-text
+            &:hover, &:focus
+                background-color: $darkgray
+
+.right-column
+    .btn
+        margin-bottom: 15px
+    .btn-danger
+        float: right
+    label
+        span
+            color: $brand-primary
+    h4:last-of-type
+        display: inline-block
+    .auto-sort-wrapper
+        float: right
+        margin-top: 12px
+        label, input
+            vertical-align: middle
+            margin: 0
+        label
+            padding-right: 3px
+            cursor: pointer
+            +no-select
+        input
+            outline: 0
+
+//dragula
+.gu-transit
+    opacity: 1
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+    filter: alpha(opacity=100)
+    background-color: $darkgray !important
+    * 
+        opacity: 0
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+        filter: alpha(opacity=0)
+
+.gu-mirror 
+    background-color: $darkgray
+    opacity: 1
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+    filter: alpha(opacity=100)
+    transform: rotate(4deg)
+    label
+        margin-bottom: 40px

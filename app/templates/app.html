@@ -1,0 +1,29 @@
+<div class="container main">
+    
+    <form class="row" (submit)="reSort()">        
+        <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2">
+            <div class="left-column">
+               <div class="list" (changed)=changed($event) [autoSort]="autoSort"></div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-5 col-md-4">
+            <div class="right-column">
+                <h4>Column 2</h4>
+                
+                <button type="submit" class="btn btn-primary">Sort</button>
+                <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
+                <br>
+                
+                <label>Sort counter: <span>{{sortCounter}}</span></label>
+                <br>
+                
+                <h4>Drag and drop</h4>
+                <div class="auto-sort-wrapper">
+                    <label for="auto-sort">Auto sort</label>
+                    <input id="auto-sort" type="checkbox" [(ngModel)]="autoSort">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

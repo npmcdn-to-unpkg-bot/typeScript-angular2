@@ -1,0 +1,17 @@
+<h4>
+     <span>Column 1</span>
+     <span class="spinner" *ngIf="listUpdate">{{timeCounter}}</span>    
+ </h4>
+
+<div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
+
+<ul class="my-list-inner-wrapper reset-list" [dragula]='"list-bag"' [dragulaModel]='data'>
+    <li *ngFor="#item of data; #idx = index" class="form-group">
+        <label attr.for="item-{{idx}}">
+            Label
+            <span>{{item.label}}</span>
+        </label>
+        <input id="item-{{idx}}" class="form-control" type="text" placeholder="{{item.placeholder}}" 
+        [(ngModel)]="item.index" required>
+  </li>
+</ul>

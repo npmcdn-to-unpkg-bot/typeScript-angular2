@@ -1,0 +1,25 @@
+[{
+    "label": "A1",
+    "index": 3
+}, {
+    "label": "B2",
+    "index": 3.0002
+}, {
+    "label": "C4",
+    "index": -2
+}, {
+    "label": "D8",
+    "index": 1
+}, {
+    "label": "E16",
+    "index": 5
+}, {
+    "label": "F32",
+    "index": 0.88
+}, {
+    "label": "G64",
+    "index": 12
+}, {
+    "label": "H128",
+    "index": 0
+}]

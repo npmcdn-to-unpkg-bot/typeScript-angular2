@@ -1,0 +1,54 @@
+@keyframes rotation
+    from
+        transform: rotate(0deg)
+    to
+        transform: rotate(360deg)
+
+=spinner($size, $border)
+    animation: rotation .6s infinite linear
+    border-top: $border solid rgba(0,174,239,0.8)
+    border-right: $border solid rgba(0,174,239,0.15)
+    border-left: $border solid rgba(0,174,239,0.8)
+    border-bottom: $border solid rgba(0,174,239,0.15)
+    border-radius: 50%
+    +size($size)
+
+=clearfix
+    &::after
+        content: ""
+        clear: both
+        display: table
+
+=headings($from: 1, $to: 6)
+    @for $i from $from through $to
+        h#{$i}
+            @content
+
+=ver-align-abs($index)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: $index
+      
+=size($value)
+    $width: nth($value, 1)
+    $height: $width
+    @if length($value) > 1
+        $height: nth($value, 2)
+    @if is-size($height)
+        height: $height
+    @else
+        @warn "`#{$height}` is not a valid length for the `$height` parameter in the `size` mixin."
+    @if is-size($width)
+        width: $width
+    @else
+        @warn "`#{$width}` is not a valid length for the `$width` parameter in the `size` mixin."
+
+=no-select
+  -webkit-touch-callout: none /* iOS Safari */
+  -webkit-user-select: none   /* Chrome/Safari/Opera */
+  -khtml-user-select: none    /* Konqueror */
+  -moz-user-select: none      /* Firefox */
+  -ms-user-select: none       /* IE/Edge */
+  user-select: none
